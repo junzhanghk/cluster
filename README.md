@@ -87,6 +87,7 @@ the time that i and j st within max_dist after t_start if they are
 %max_dist: upper bound for the distance between neighbors
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %functions to compute link/node metrics
 
 %metric ALM: 
@@ -99,12 +100,14 @@ the time that i and j st within max_dist after t_start if they are
 function [link_metric, node_metric]=rm_metric(n_v,dist,speed,loc,vd,max_dist,t_start,t_end,n_list)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %metric max node_degree
 %from“Multicluster, mobile, multimedia radio network,” Wireless networks, vol. 1, no. 3, pp. 255–265, 1995.
 
 function [node_metric]=degree_metric(n_v,dist,speed,loc,vd,max_dist,t_start,t_end,n_list)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %metric LLT
 %From “Robust clustering for connected vehicles using local network criticality,” in IEEE ICC 2012
 %or “Passcar: A passive clustering aided routing protocol for vehicular ad hoc networks,” Computer communications, vol. 36, no. 2, pp. %170–179, 2013
@@ -112,6 +115,7 @@ function [node_metric]=degree_metric(n_v,dist,speed,loc,vd,max_dist,t_start,t_en
 function [link_metric, node_metric]=llt_metric(n_v,dist,speed,loc,vd,max_dist,t_start,t_end,n_list)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %metric SLS
 %from“Internode mobility correlation for group detection and analysis in vanets,” Vehicular Technology, IEEE Transactions on, vol. 62, no. 9, pp. 4590–4601, 2013.
 
@@ -120,6 +124,7 @@ function [link_metric, node_metric]=llt_metric(n_v,dist,speed,loc,vd,max_dist,t_
 function [link_metric, node_metric]=sls_metric(n_v,dist,speed,loc,vd,max_dist,t_start,t_end,n_list)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %metric SF
 %from“Clustering in vehicular ad hoc networks using affinity propagation,” Ad Hoc Networks,
 %vol. 13, pp. 535–548, 2014
@@ -129,6 +134,7 @@ function [link_metric, node_metric]=sls_metric(n_v,dist,speed,loc,vd,max_dist,t_
 function [link_metric, node_metric]=sf_metric(n_v,dist,speed,loc,vd,max_dist,t_start,t_end,n_list)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %metric vmasc
 %from  “Vmasc: Vehicular multi-hop algorithm for stable clustering in vehicular ad hoc %networks,” in IEEE WCNC 2013
 %“Multihop-cluster-based ieee 802.11 p and lte hybrid architecture for vanet safety message dissemination,” IEEE Transactions on %Vehicular Technology, vol. 65, no. 4, pp. 2621–2636, 2016.
@@ -136,14 +142,17 @@ function [link_metric, node_metric]=sf_metric(n_v,dist,speed,loc,vd,max_dist,t_s
 function [link_metric, node_metric]=vmasc_metric(n_v,speed,t_start,n_list)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %metric PM (perfect measurement)
 
 function [link_metric, node_metric]=ps_metric(n_v,stay_time,n_list)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %computer performance metrics under the bestmean strategy
 %input: run_round: number of random evaluation
+
 %return 
 %stay_avg: average CM duration
 
@@ -154,8 +163,11 @@ function [link_metric, node_metric]=ps_metric(n_v,stay_time,n_list)
 function [stay_avg,stay_ch_avg,chi]=compute_ch_cm_cluster_bestmean(n_v,link_metric,node_metric,n_list,contact_time, stay_time, run_round)
 
 %%%%%%%%%%%%%%%%%%%%%
+
 %computer performance metrics under the bestpair strategy
+
 %input: run_round: number of random evaluation
+
 %return 
 %stay_avg: average CM duration
 
@@ -166,6 +178,7 @@ function [stay_avg,stay_ch_avg,chi]=compute_ch_cm_cluster_bestmean(n_v,link_metr
 function [stay_avg,stay_ch_avg,chi]=compute_ch_cm_cluster_bestpair(n_v,link_metric,node_metric,n_list,contact_time, stay_time, run_round)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %FCFS strategy is equivalent to the bestmean/bestpair strategy with random link/node metric
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -254,10 +267,13 @@ RM   %ALM algorithm
 VMASC %VMASC algorithm
 
 8.	Illustration of CM duration, CH duration and number of clusters by different version Lowest-ID algorithm: 
+
 draw_LID_four_case.m （run after generation files a1_test.mat, a2_test.mat, b1_test.mat, b2_test.mat by  main_update_lid_only.m）
 
 9.	Illustration of CM duration, CH duration and number of clusters by different clustering algorithms: 
+
 draw_all_algorithm (run after generation files a1_test_all.mat, a2_test_all.mat, b1_test_all.mat, b2_test_all.mat by  main_update.m）)
 
 10.	Illustration the comparison between clustering algorithms with algorithms with perfect measurement of link duration: 
+
 draw_compare_pm.m (run after generation files a1_test_all.mat, a2_test_all.mat, b1_test_all.mat, b2_test_all.mat by  main_update.m）)
